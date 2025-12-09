@@ -20,6 +20,15 @@ class CreateJobRequest(BaseModel):
     base_image_url: HttpUrl
     selfie_url: HttpUrl
 
+# --- NEW ROOT ROUTE ADDED HERE ---
+@app.get("/")
+def read_root():
+    return {
+        "message": "Face-Swap Service is running!",
+        "documentation": "/docs",
+        "health": "ok"
+    }
+# ---------------------------------
 
 @app.post("/api/v1/face-swap/jobs")
 async def create_face_swap_job(req: CreateJobRequest, background_tasks: BackgroundTasks):
@@ -85,6 +94,7 @@ async def process_job(reference_id: str):
         elapsed_ms = int((time.time() - start) * 1000)
         # In a real deployment you'd upload to S3/CDN and return public URL.
         # For this demo, we serve from /static/output
+        # Note: Ideally, include the full domain, but relative works for browsers
         public_url = f"/static/output/{out_name}"
         update_job(reference_id, {
             "status": "completed",
