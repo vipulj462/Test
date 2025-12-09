@@ -68,6 +68,7 @@ JSON
 
 2. Get Job Status / Result
 Endpoint: GET /api/v1/face-swap/jobs/{reference_id}
+
 Poll this endpoint to check status or retrieve the final image.
 Response (Processing):
 JSON
@@ -75,6 +76,7 @@ JSON
   "reference_id": "job_8f2a1c9e4b",
   "status": "processing"
 }
+
 Response (Completed):
 JSON
 {
@@ -89,14 +91,4 @@ JSON
 Language: Python 3.11
 Framework: FastAPI (Asynchronous)
 Computer Vision: OpenCV (Haar Cascades + Seamless Cloning)
-Validation: Pydantic v2
-Containerization: Docker
-⚙️ Local Installation & Testing
-You can run this API locally using Docker.
-1. Clone the repository
-Bash
-git clone https://github.com/vipulj462/Test.git
-cd Test
-2. Build the Docker Image
-Bash
-docker build -t face-swap-api .
+
