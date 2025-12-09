@@ -53,10 +53,9 @@ Initiates a background job. Returns a `reference_id` immediately.
 **Request Body:**
 ```json
 {
-  "base_image_url": "https://raw.githubusercontent.com/vipulj462/Test/main/test_images/base.jpg",
-  "selfie_url": "https://raw.githubusercontent.com/vipulj462/Test/main/test_images/selfie.jpg"
+  "base_image_url": "https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&w=600",
+  "selfie_url": "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=600"
 }
-
 Response (202 Accepted):
 JSON
 {
